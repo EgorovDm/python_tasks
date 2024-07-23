@@ -1,6 +1,22 @@
 #!/usr/bin/env python3
 import traceback
 
+mutable_var = [
+    1, 
+    'a', 
+    {1,2}, 
+    (), 
+    object()
+]
+# print(id(mutable_var))
+mutable_var[:] = [None]*len(mutable_var) 
+# print(id(mutable_var))
+print(
+    "Mutable var:",
+    mutable_var,
+    sep="\n"
+)
+
 immutable_var = (
     1,
     "one",
