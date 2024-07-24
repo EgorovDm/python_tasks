@@ -3,8 +3,8 @@ import numpy as np
 
 def get_primes(n: int) -> np.ndarray:
     '''numpy Sieve of Eratosthenes'''
-    x = np.ones((n+1,), dtype=np.bool)
-    x[0], x[1] = False, False
+    x = np.ones((n+1,), dtype=bool)
+    x[0:2] = False
     for i in range(2, int(n**0.5)+1):
         if x[i]:
             x[2*i::i] = False
