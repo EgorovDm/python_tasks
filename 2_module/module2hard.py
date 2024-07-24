@@ -46,7 +46,7 @@ def calc_devisors(num: int) -> list:
     if rem == 0: 
         devisors.append(2)
     for i in range(3, pg_div):
-        if not (num % i): 
+        if not (num % i):
             devisors.append(i)
     if rem == 0 and pg_div != 2: 
         devisors.append(pg_div)
