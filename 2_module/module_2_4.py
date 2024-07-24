@@ -18,6 +18,10 @@ primes, not_primes = [], []
 possible_primes = get_primes(np.max(numbers))
 
 for number in numbers:
-    primes.append(number) if number in possible_primes else not_primes.append(number)
+    if number in possible_primes:
+        primes.append(number)
+    else:
+        if not number in [0,1]:
+            not_primes.append(number)
 
 print(f"PRIMES: {primes}\nNOT_PRIMES: {not_primes}")
