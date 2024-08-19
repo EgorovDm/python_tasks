@@ -12,6 +12,11 @@ values_dict = {
 }
 values_list2 = values_list[:2]
 
+print_params(10, 'строка', True)
+print_params(a=30, b='нестрока', c=False)
+print_params(c=True)
+print_params(a=10, b='строка')
+print_params(30, c=False)
 print_params()
 print_params(*values_list)
 print_params(*values_list2, False)
