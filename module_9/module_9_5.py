@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# wizardlm2:7b + 2 fixes
+# wizardlm2:7b + 3 fixes
 
 # Класс исключения StepValueError, наследуемый от ValueError
 class StepValueError(ValueError):
@@ -22,13 +22,13 @@ class Iterator:
     def __next__(self):
         if self.step > 0:
             # Если шаг положительный, увеличиваем покатор до тех пор, пока не станет больше stop
-            if self.pointer < self.stop:
+            if self.pointer + self.step <= self.stop:
                 self.pointer += self.step
             else:
                 raise StopIteration
         else:
             # Если шаг отрицательный, уменьшаем покатор до тех пор, пока не станет меньше stop
-            if self.pointer > self.stop:
+            if self.pointer + self.step >= self.stop:
                 self.pointer += self.step
             else:
                 raise StopIteration
