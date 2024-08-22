@@ -4,10 +4,7 @@
 import glob
 import os
 import time
-import multiprocessing as mp
 from threading import Thread
-
-c_count = mp.cpu_count()
 
 # класс таймер для удобной работы
 class PerfTimer:
@@ -49,10 +46,10 @@ def file_cleanup() -> None:
         os.remove(file_name)
 
 job_spec = [
-    (1, "example5.txt"),
-    (3, "example6.txt"),
-    (20, "example7.txt"),
-    (10, "example8.txt")
+    (10, "example1.txt"),
+    (30, "example2.txt"),
+    (200, "example3.txt"),
+    (100, "example4.txt")
 ]
 file_cleanup()
 

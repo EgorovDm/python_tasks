@@ -29,16 +29,11 @@ class Knight(threading.Thread):
                 )
                 return None
 
-def main():
+if __name__ == "__main__":
     first_knight = Knight("Sir Lancelot", 10)
     second_knight = Knight("Sir Galahad", 20)
 
     # Останавливаем текущий поток, чтобы отслеживать вывод и затем возобновлять его
     first_knight.join()
     second_knight.join()
-
     print("Все битвы закончились!")
-
-
-if __name__ == "__main__":
-    main()
